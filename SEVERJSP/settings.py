@@ -16,6 +16,13 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
+
+
+
+
+
+
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
@@ -25,8 +32,13 @@ SECRET_KEY = 'django-insecure-z_8&e0#$1emdgm3z3bacr%9t1(8c#2zk%e@6ly%7zqvz)(co!q
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['35.183.44.11','jashandeep.co.uk','127.0.0.1']
 
+STATIC_ROOT = BASE_DIR/'propertyMangageSystem-cdn/'
+
+STATICFILES_DIRS = [
+    BASE_DIR / "files/templates/static/",
+]
 
 # Application definition
 
@@ -51,10 +63,13 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'SEVERJSP.urls'
 
+
+
+# tempaltes
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        "DIRS": [BASE_DIR / "files/templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

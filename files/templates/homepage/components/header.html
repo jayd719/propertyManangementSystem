@@ -1,0 +1,41 @@
+{% load static %}
+<div class="navbar px-1 fixed top-0 glass transition duration-150 ease-in-out hover:shadow-2xl" style="z-index: 100;">
+  <div class="navbar-start">
+    <a class="text-4xl text-danger font-bold px-10 abel-regular " href="{% url 'homepage' %}">True Norht Towers</a>
+  </div>
+
+  <div class="navbar-center hidden lg:flex">
+    <ul class="menu menu-horizontal px-1 gap-10 ">
+      <li><a href="">home</a></li>
+      <li><a href="">home</a></li>
+      <li><a href="">home</a></li>
+      <li><a href="">home</a></li>
+    </ul>
+  </div>
+
+    <div class="navbar-end "> 
+      <a class="hidden lg:flex btn btn-dark btn-sm mx-10 rounded-sm" href="">Residents</a>
+      <div class="lg:hidden">
+        
+        <div class="drawer drawer-end">
+          <input id="my-drawer-4" type="checkbox" class="drawer-toggle" />
+          <div class="drawer-content">
+            <!-- Page content here -->
+            <label for="my-drawer-4" class="drawer-button btn btn-primary">Open drawer</label>
+          </div> 
+          <div class="drawer-side">
+            <label for="my-drawer-4" aria-label="close sidebar" class="drawer-overlay"></label>
+            <ul class="menu p-4 w-80 min-h-full bg-base-100 text-base-content">
+              <!-- Sidebar content here -->
+              <li><a>Sidebar Item 1</a></li>
+              <li><a>Sidebar Item 2</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+</div>
+
+
+
