@@ -1,0 +1,70 @@
+
+<div class="w-full max-w-md p-5">
+    <h2 class="text-lg font-semibold text-gray-900  mb-2">Contact details</h2>
+    <address class="relative p-4 not-italic grid grid-cols-1">
+        <div id="contact-details" class="text-gray-900  text-xs">
+            <p>20 Barrel Yards Blvd,</p>
+            <p>Live/Work Suite 1 Waterloo ON N2L 0C3</p>
+            <p class="mt-4" >e. info@barrelyards.com</p>
+            <p >+ 12 345 67890</p>
+            {% include 'homepage/components/socials.html'%}
+        </div>
+        
+        <button data-copy-to-clipboard-target="contact-details" data-copy-to-clipboard-content-type="textContent" data-tooltip-target="tooltip-contact-details" class="absolute end-2 top-2 text-gray-500  hover:bg-gray-100  rounded-lg p-2 inline-flex items-center justify-center">
+            <span id="default-icon-contact-details">
+                <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
+                    <path d="M16 1h-3.278A1.992 1.992 0 0 0 11 0H7a1.993 1.993 0 0 0-1.722 1H2a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2Zm-3 14H5a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Zm0-4H5a1 1 0 0 1 0-2h8a1 1 0 1 1 0 2Zm0-5H5a1 1 0 0 1 0-2h2V2h4v2h2a1 1 0 1 1 0 2Z"/>
+                </svg>
+            </span>
+            <span id="success-icon-contact-details" class="hidden inline-flex items-center">
+                <svg class="w-3.5 h-3.5 text-blue-700 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
+                </svg>
+            </span>
+        </button>
+        <div id="tooltip-contact-details" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip">
+            <span id="default-tooltip-message-contact-details">Copy to clipboard</span>
+            <span id="success-tooltip-message-contact-details" class="hidden">Copied!</span>
+            <div class="tooltip-arrow" data-popper-arrow></div>
+        </div>
+    </address>
+</div>
+
+
+<script>
+
+const clipboard = FlowbiteInstances.getInstance('CopyClipboard', 'contact-details');
+const tooltip = FlowbiteInstances.getInstance('Tooltip', 'tooltip-contact-details');
+
+const $defaultIcon = document.getElementById('default-icon-contact-details');
+const $successIcon = document.getElementById('success-icon-contact-details');
+
+const $defaultTooltipMessage = document.getElementById('default-tooltip-message-contact-details');
+const $successTooltipMessage = document.getElementById('success-tooltip-message-contact-details');
+
+clipboard.updateOnCopyCallback((clipboard) => {
+    showSuccess();
+
+    // reset to default state
+    setTimeout(() => {
+        resetToDefault();
+    }, 2000);
+})
+
+const showSuccess = () => {
+    $defaultIcon.classList.add('hidden');
+    $successIcon.classList.remove('hidden');
+    $defaultTooltipMessage.classList.add('hidden');
+    $successTooltipMessage.classList.remove('hidden');    
+    tooltip.show();
+}
+
+const resetToDefault = () => {
+    $defaultIcon.classList.remove('hidden');
+    $successIcon.classList.add('hidden');
+    $defaultTooltipMessage.classList.remove('hidden');
+    $successTooltipMessage.classList.add('hidden');
+    tooltip.hide();
+}
+
+</script>

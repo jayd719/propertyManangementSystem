@@ -2,4 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 def homepage(requests):
-    return render(requests,'homepage/main.html')
+    data={'askForEmail': True}
+    return render(requests,'homepage/main.html',data)
+
+

@@ -1,20 +1,20 @@
 {% load static %}
-<div class="navbar px-1 fixed top-0 glass transition duration-150 ease-in-out hover:shadow-2xl" style="z-index: 100;">
+<div id="navbar" class="navbar px-1 fixed top-0 transition duration-150 ease-in-out  hover:shadow-2xl hover:bg-sky-900" style="z-index: 100;">
   <div class="navbar-start">
-    <a class="text-4xl text-danger font-bold px-10 abel-regular " href="{% url 'homepage' %}">True Norht Towers</a>
+    <a class="text-4xl text-white font-bold px-10 abel-regular " href="{% url 'homepage' %}">True Norht Towers</a>
   </div>
 
   <div class="navbar-center hidden lg:flex">
-    <ul class="menu menu-horizontal px-1 gap-10 ">
-      <li><a href="">home</a></li>
-      <li><a href="">home</a></li>
-      <li><a href="">home</a></li>
-      <li><a href="">home</a></li>
+    <ul class="menu menu-horizontal px-1 gap-10 font-bold text-md text-white">
+      <li><a class="round-2xl hover:scale-[1.1] ease-out duration-300 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300" href="">Availability</a></li>
+      <li><a class="" href="">Virtual Tours</a></li>
+      <li><a  class="" href="">Book a tour</a></li>
+      <li><a  class="" href="">Lease a suite</a></li>
     </ul>
   </div>
 
-    <div class="navbar-end "> 
-      <a class="hidden lg:flex btn btn-dark btn-sm mx-10 rounded-sm" href="">Residents</a>
+    <div class="navbar-end " > 
+      <a href="" class="hidden mx-8 xl:inline-flex items-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ml-1 sm:ml-3">Pricing &amp; FAQ</a>
       <div class="lg:hidden">
         
         <div class="drawer drawer-end">
@@ -38,4 +38,18 @@
 </div>
 
 
+<script>
+function updateDivPosition() {
+  let scrollY = window.scrollY; // Get current scroll position
+
+  //  rotate to 0
+  if (scrollY >= 10 && scrollY <= 450) {
+    document.getElementById('navbar').style.background=`rgba(16, 24, 34, ${scrollY/5-20})`
+  }
+ 
+}
+
+
+
+// window.addEventListener("scroll", updateDivPosition);</script>
 

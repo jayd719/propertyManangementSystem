@@ -1,6 +1,6 @@
 {% load static %}
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en">
   <head>
     <!-- <meta http-equiv="refresh" content="1"> -->
     <meta charset="utf-8">
@@ -16,7 +16,10 @@
     <link rel="icon" href="{% static 'j.png'%}" type="image/x-icon"/>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.10.2/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" /> -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css" rel="stylesheet" type="text/css" />
+
+
 
   </head>
   <style>
@@ -37,9 +40,13 @@ display: none;
 
 
 
-  <body class=""  >
+  <body >
     {% include 'homepage/components/header.html' %}
     {% include 'homepage/components/sectionOne.html' %}
+    {% include 'homepage/components/sectionTwo.html' %}
+
+    {%include 'homepage/components/features.html'%}  
+    {% include 'homepage/components/map.html'%}
     {% include 'homepage/components/footer.html' %}
     
     
@@ -47,7 +54,7 @@ display: none;
     {% endblock %}
   <!-- <script src="{% static 'location.js' %}"></script> -->
 
-  
+    {% include 'homepage/functions/askForEmail.html'%}
 
   <script src="{% static 'app.js'%}"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
