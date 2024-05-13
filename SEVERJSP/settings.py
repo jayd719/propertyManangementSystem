@@ -37,7 +37,7 @@ ALLOWED_HOSTS = ['35.183.44.11','jashandeep.co.uk','127.0.0.1']
 STATIC_ROOT = BASE_DIR/'propertyMangageSystem-cdn/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / "files/templates/static/",
+    BASE_DIR / "files/static/",
 ]
 
 # Application definition
