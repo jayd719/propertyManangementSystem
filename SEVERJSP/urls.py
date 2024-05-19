@@ -17,7 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from T01homepage.views import homepage
+from T01homepage import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',homepage,name='homepage')
+    path('',homepage,name='homepage'),
+    path('login/', views.Login.as_view(), name='loginPage'),
+    path('signUser/', views.Login.as_view(), name='signIn'),
 ]
