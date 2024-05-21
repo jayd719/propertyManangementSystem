@@ -1,6 +1,9 @@
+
 {% load static %}
+
+
 <!doctype html>
-<html lang="en">
+<html lang="en" id="html">
   <head>
     <!-- <meta http-equiv="refresh" content="1"> -->
     <meta charset="utf-8">
@@ -40,24 +43,24 @@ display: none;
 
 
 
-  <body >
-    {% include 'homepage/components/header.html' %}
-    {% include 'homepage/components/sectionOne.html' %}
-    {% include 'homepage/components/sectionTwo.html' %}
-
-    {%include 'homepage/components/features.html'%}  
-    {% include 'homepage/components/map.html'%}
-    {% include 'homepage/components/footer.html' %}
+  <body class="bg-white text-black">
+    
     
     
     {% block content%}
     {% endblock %}
   <!-- <script src="{% static 'location.js' %}"></script> -->
 
+    {% include 'homepage/components/footer.html' %}
     {% include 'homepage/functions/askForEmail.html'%}
 
-  <script src="{% static 'app.js'%}"></script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+  <script src="https://unpkg.com/htmx.org@1.9.12/dist/htmx.js" integrity="sha384-qbtR4rS9RrUMECUWDWM2+YGgN3U4V4ZncZ0BvUcg9FGct0jqXz3PUdVpU1p0yrXS" crossorigin="anonymous"></script>
+
+  <script>
+    document.getElementById('html').className='light'
+  </script>
   </body>
 
 </html>

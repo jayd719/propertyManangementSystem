@@ -17,10 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from T01homepage.views import homepage
-from T01homepage import views
+from T01homepage import views as T01
+from T02Dashboard import views as T02
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',homepage,name='homepage'),
-    path('login/', views.Login.as_view(), name='loginPage'),
-    path('signUser/', views.Login.as_view(), name='signIn'),
+    path('login/', T01.Login.as_view(redirect_authenticated_user=True), name='loginPage'),
+    path('signUser/', T01.Login.as_view(), name='signIn'),
+    path('resident_dashbord',T02.dashhome,name='homepage-residents'),
+    path('clicked/',T02.clicked,name='clicked')
 ]

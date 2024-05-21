@@ -1,0 +1,19 @@
+{% extends 'main.html'%}
+    {% block content%}
+
+   <form>
+    {% csrf_token %}
+        <input  hx-post="/clicked/"
+        hx-target="#status-out"
+        hx-trigger="click"
+        class="" type="checkbox" name="status">
+        
+        
+   </form> 
+   <span id="status-out" class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300">Teal</span>
+
+
+
+    {% endblock %}
+
+    
